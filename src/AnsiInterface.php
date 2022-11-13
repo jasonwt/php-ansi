@@ -1,16 +1,16 @@
 <?php
-     declare(strict_types=1);
-    
-     namespace ansi;
+    declare(strict_types=1);
 
-use ansi\sequences\SequenceInterface;
+    namespace ansi;
 
-     error_reporting(E_ALL);
-     ini_set('display_errors', '1');
+    use ansi\sequences\SequenceInterface;
 
-     require_once(__DIR__ . "/RGB.php");
+    error_reporting(E_ALL);
+    ini_set('display_errors', '1');
 
-     interface AnsiInterface {
+    require_once(__DIR__ . "/RGB.php");
+
+    interface AnsiInterface {
         static public function NEW(int $colorBits = 8) : Ansi;
         static public function TEXT(string $text, ?RGB $foregroundColor = null, ?RGB $backgroundColor = null, int $colorBits = 8, bool $underline = false, bool $blinking = false, bool $inverse = false, bool $hidden = false, bool $strike = false) : Ansi;
 //
@@ -119,5 +119,4 @@ use ansi\sequences\SequenceInterface;
         public function RestoreScreen() : Ansi;
         public function rs() : Ansi;        
      }
- 
 ?>
