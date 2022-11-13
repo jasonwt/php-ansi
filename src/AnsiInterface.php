@@ -11,8 +11,8 @@
     require_once(__DIR__ . "/RGB.php");
 
     interface AnsiInterface {
-        static public function NEW(int $colorBits = 8) : Ansi;
-        static public function TEXT(string $text, ?RGB $foregroundColor = null, ?RGB $backgroundColor = null, int $colorBits = 8, bool $underline = false, bool $blinking = false, bool $inverse = false, bool $hidden = false, bool $strike = false) : Ansi;
+        static public function NEW(int $colorBits = 8) : AnsiInterface;
+        static public function TEXT(string $text, ?RGB $foregroundColor = null, ?RGB $backgroundColor = null, int $colorBits = 8, bool $underline = false, bool $blinking = false, bool $inverse = false, bool $hidden = false, bool $strike = false) : AnsiInterface;
 //
         public function ReadByte(string $prompt = "", $showInput = false) : string;
 //
@@ -20,103 +20,103 @@
 //
         public function __toString() : string;
 //
-        public function CloseLast(int $num = 1) : Ansi;
-        public function cl(int $num = 1) : Ansi;
+        public function CloseLast(int $num = 1) : AnsiInterface;
+        public function cl(int $num = 1) : AnsiInterface;
 //
-        public function CloseAll() : Ansi;
-        public function ca() : Ansi;
+        public function CloseAll() : AnsiInterface;
+        public function ca() : AnsiInterface;
 //
-        public function AddSequence(SequenceInterface $sequence) : Ansi;
-        public function as(SequenceInterface $sequence) : Ansi;
+        public function AddSequence(SequenceInterface $sequence) : AnsiInterface;
+        public function as(SequenceInterface $sequence) : AnsiInterface;
 //
-        public function SetForegroundColor(int $red, int $green, int $blue) : Ansi;
-        public function sfc(int $red, int $green, int $blue) : Ansi;
+        public function SetForegroundColor(int $red, int $green, int $blue) : AnsiInterface;
+        public function sfc(int $red, int $green, int $blue) : AnsiInterface;
 //
-        public function SetBackgroundColor(int $red, int $green, int $blue) : Ansi;
-        public function sbc(int $red, int $green, int $blue) : Ansi;        
+        public function SetBackgroundColor(int $red, int $green, int $blue) : AnsiInterface;
+        public function sbc(int $red, int $green, int $blue) : AnsiInterface;        
 //
-        public function AddCustom(string $opening, string $closing = "") : Ansi;
-        public function ac(string $opening, string $closing = "") : Ansi;
+        public function AddCustom(string $opening, string $closing = "") : AnsiInterface;
+        public function ac(string $opening, string $closing = "") : AnsiInterface;
 //
-        public function SetColors(?RGB $foregroundColor = null, ?RGB $backgroundColor = null) : Ansi;
-        public function sc(?RGB $foregroundColor = null, ?RGB $backgroundColor = null) : Ansi;
+        public function SetColors(?RGB $foregroundColor = null, ?RGB $backgroundColor = null) : AnsiInterface;
+        public function sc(?RGB $foregroundColor = null, ?RGB $backgroundColor = null) : AnsiInterface;
 //
-        public function AddText(string $text) : Ansi;
-        public function at(string $text) : Ansi;
+        public function AddText(string $text) : AnsiInterface;
+        public function at(string $text) : AnsiInterface;
 //            
-        public function Underline() : Ansi;
-        public function u() : Ansi;
+        public function Underline() : AnsiInterface;
+        public function u() : AnsiInterface;
 //            
-        public function Blink() : Ansi;
-        public function bl() : Ansi;
+        public function Blink() : AnsiInterface;
+        public function bl() : AnsiInterface;
 //            
-        public function Inverse() : Ansi;
-        public function inv() : Ansi;
+        public function Inverse() : AnsiInterface;
+        public function inv() : AnsiInterface;
 //            
-        public function Hidden() : Ansi;
-        public function h() : Ansi;
+        public function Hidden() : AnsiInterface;
+        public function h() : AnsiInterface;
 //            
-        public function Strike() : Ansi;
-        public function s() : Ansi;
+        public function Strike() : AnsiInterface;
+        public function s() : AnsiInterface;
 //
-        public function Bold() : Ansi;
-        public function b() : Ansi;
+        public function Bold() : AnsiInterface;
+        public function b() : AnsiInterface;
 //
-        public function Faint() : Ansi;
-        public function f() : Ansi;
+        public function Faint() : AnsiInterface;
+        public function f() : AnsiInterface;
 //
-        public function Italic() : Ansi;
-        public function i() : Ansi;
+        public function Italic() : AnsiInterface;
+        public function i() : AnsiInterface;
 //
-        public function Reset() : Ansi;
-        public function r() : Ansi;
+        public function Reset() : AnsiInterface;
+        public function r() : AnsiInterface;
 //
-        public function SaveCursorPosition() : Ansi;
-        public function scp() : Ansi;
+        public function SaveCursorPosition() : AnsiInterface;
+        public function scp() : AnsiInterface;
 //
-        public function RestoreCursorPosition() : Ansi;
-        public function rcp() : Ansi;
+        public function RestoreCursorPosition() : AnsiInterface;
+        public function rcp() : AnsiInterface;
 //
-        public function ClearScreen() : Ansi;
-        public function cs() : Ansi;
+        public function ClearScreen() : AnsiInterface;
+        public function cs() : AnsiInterface;
 //
-        public function MoveCursorHome() : Ansi;
-        public function mch() : Ansi;
+        public function MoveCursorHome() : AnsiInterface;
+        public function mch() : AnsiInterface;
 //
-        public function MoveCursorTo(int $l, int $c) : Ansi;
-        public function mct(int $l, int $c) : Ansi;
+        public function MoveCursorTo(int $l, int $c) : AnsiInterface;
+        public function mct(int $l, int $c) : AnsiInterface;
 //
-        public function MoveCursorUp(int $num) : Ansi;
-        public function mcu(int $num) : Ansi;
+        public function MoveCursorUp(int $num) : AnsiInterface;
+        public function mcu(int $num) : AnsiInterface;
 //
-        public function MoveCursorDown(int $num) : Ansi;
-        public function mcd(int $num) : Ansi;
+        public function MoveCursorDown(int $num) : AnsiInterface;
+        public function mcd(int $num) : AnsiInterface;
 //
-        public function MoveCursorLeft(int $num) : Ansi;
-        public function mcl(int $num) : Ansi;
+        public function MoveCursorLeft(int $num) : AnsiInterface;
+        public function mcl(int $num) : AnsiInterface;
 //
-        public function MoveCursorRight(int $num) : Ansi;
-        public function mcr(int $num) : Ansi;
+        public function MoveCursorRight(int $num) : AnsiInterface;
+        public function mcr(int $num) : AnsiInterface;
 //
-        public function ClearCurrentLine() : Ansi;
-        public function ccl() : Ansi;
+        public function ClearCurrentLine() : AnsiInterface;
+        public function ccl() : AnsiInterface;
 //
-        public function ClearCurrentLineToCursor() : Ansi;
-        public function ccltc() : Ansi;
+        public function ClearCurrentLineToCursor() : AnsiInterface;
+        public function ccltc() : AnsiInterface;
 //
-        public function ClearCurrentLineFromCursor() : Ansi;
-        public function cclfc() : Ansi;
+        public function ClearCurrentLineFromCursor() : AnsiInterface;
+        public function cclfc() : AnsiInterface;
 //
-        public function ClearScreenToCursor() : Ansi;
-        public function cstc() : Ansi;
+        public function ClearScreenToCursor() : AnsiInterface;
+        public function cstc() : AnsiInterface;
 //
-        public function ClearScreenFromCursor() : Ansi;
-        public function csfc() : Ansi;
+        public function ClearScreenFromCursor() : AnsiInterface;
+        public function csfc() : AnsiInterface;
 //
-        public function SaveScreen() : Ansi;
-        public function ss() : Ansi;
+        public function SaveScreen() : AnsiInterface;
+        public function ss() : AnsiInterface;
 //
-        public function RestoreScreen() : Ansi;
-        public function rs() : Ansi;        
+        public function RestoreScreen() : AnsiInterface;
+        public function rs() : AnsiInterface;        
      }
 ?>
