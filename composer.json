@@ -1,0 +1,17 @@
+{
+    "name": "pctlib/ansi",
+    "description": "PHP Ansi Terminal",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "pctlib\\ansi\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jason Thompson"
+        }
+    ],
+    "require": {}
+}
